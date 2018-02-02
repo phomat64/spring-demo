@@ -35,7 +35,7 @@ public class AppLocalProxyConfig {
 
     @PostConstruct
     public void init() {
-        LOGGER.debug(" AppLocalProxyConfig -Started");
+        LOGGER.debug(" AppLocalProxyConfig - Started");
         Properties props = System.getProperties();
         if (Boolean.TRUE.equals(httpsProxySet)) {
             props.setProperty("https.proxySet", String.valueOf(httpsProxySet));
@@ -48,7 +48,7 @@ public class AppLocalProxyConfig {
             props.setProperty("http.proxyHost", httpProxy);
             props.setProperty("http.proxyPort", httpProxyPort);
         }
-        LOGGER.debug(" AppLocalProxyConfig -Completed");
+        LOGGER.debug(" AppLocalProxyConfig - Completed");
 
     }
 }
