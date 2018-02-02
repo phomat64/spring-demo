@@ -2,12 +2,15 @@ package com.example.demo.domain;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Convert;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.example.demo.ras.converters.LocalDateTimeConverter;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -27,6 +30,7 @@ public class DbHotel {
     private String name;
 
     @Column(name = "open_date")
+    @Convert(converter = LocalDateTimeConverter.class)
     private LocalDate openDate;
 
     @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL)

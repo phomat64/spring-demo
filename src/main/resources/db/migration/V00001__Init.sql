@@ -1,23 +1,23 @@
 create table hotels (
-  id            text primary key,
+  id            bigserial primary key,
   name          text,
   open_date    date
 );
 
 create table floors (
-  id            text primary key,
-  hotel_id      text references hotels(id),
+  id            bigserial primary key,
+  hotel_id      bigint references hotels(id),
   name          text
 );
 
 create table rooms (
-  id            text primary key,
-  floor_id      text references floors(id),
+  id            bigserial primary key,
+  floor_id      bigint references floors(id),
   name          text
 );
 
 create table compartments (
-  id            text primary key,
-  room_id       text references rooms(id),
+  id            bigserial primary key,
+  room_id       bigint references rooms(id),
   name          text
 );

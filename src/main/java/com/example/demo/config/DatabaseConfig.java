@@ -21,34 +21,6 @@ import java.util.Map;
 @EnableJpaRepositories(entityManagerFactoryRef = "demoEntityManagerFactory", basePackages = {"com.example.demo.ras"})
 public class DatabaseConfig {
 
-//    @Configuration
-//    @Profile("cloud")
-//    static class DBCloudConfig {
-//
-//        @Bean
-//        @Primary
-//        LocalContainerEntityManagerFactoryBean databaseDbEntityManagerFactory(EntityManagerFactoryBuilder builder) {
-//            return builder.dataSource(postgresDb())
-//                    .packages("com.example.demo.domain", "com.example.demo.domain.ras.converters")
-//                    .persistenceUnit("demoDb")
-//                    .properties(jpaProperties())
-//                    .build();
-//        }
-//
-//        @Bean
-//        @Primary
-//        @ConfigurationProperties(prefix = "datasource.demodb")
-//        DataSource postgresDb(){
-//            return connectionFactory().dataSource(); //Specify db service name as argument if you have more than one
-//        }
-//
-//        private Map<String, Object> jpaProperties() {
-//            Map<String, Object> props = new HashMap<>();
-//            props.put("hibernate.ejb.naming_strategy", "org.hibernate.cfg.ImprovedNamingStrategy");
-//            return props;
-//        }
-//    }
-
     @Configuration
     @Profile("!cloud")
     static class DatabaseLocalConfig {

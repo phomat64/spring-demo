@@ -38,11 +38,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		<!-- <dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-			<scope>runtime</scope>
-		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
@@ -90,6 +85,13 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+		
+		<!-- 
+		    Not sure why this was added. I believe this was added to fix an old hibernate
+		    version where it could not deserialize Time objects (LocalDateTime, ZonedDateTime, etc.)
+		    Only way to fix it is to upgrade dependency, include the dependency below, or create
+		    your own converter
+		 -->
 		<!-- <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-java8</artifactId>
