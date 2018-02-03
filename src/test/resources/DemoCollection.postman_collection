@@ -1,0 +1,42 @@
+{
+	"variables": [],
+	"info": {
+		"name": "DemoCollection",
+		"_postman_id": "81b77df8-75d8-67ba-4305-b670fc32a383",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send Mail",
+			"request": {
+				"url": "localhost:9000/service/v1/mail",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"to\": [\n\t\t\t\"springdemonmrs@gmail.com\"\t\n\t\t  ],\n\t\"cc\": [],\n\t\"subject\": \"Hello there, Buddy.\",\n\t\"text\": \"Greetings my comrade. Have you finished the reports of Doo Doo like I asked?\",\n\t\"attachmentMap\": {}\n}"
+				},
+				"description": "Test case for sending a simple mail message"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Hotels",
+			"request": {
+				"url": "localhost:9000/service/v1/hotels",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

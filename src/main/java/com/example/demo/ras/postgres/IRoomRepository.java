@@ -5,10 +5,10 @@ import javax.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.domain.DbCompartment;
+import com.example.demo.domain.DbRoom;
 
 @Repository
 @Transactional
-public interface DbCompartmentRepository extends JpaRepository<DbCompartment, Long> {
+public interface IRoomRepository extends JpaRepository<DbRoom, Long> {
 
 }
